@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aprendendo Vue js</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div id="app">
+        <h1 v-if="status">{{titulo_true}}</h1>
+        <h1 v-else> {{titulo_false}} </h1>
+        <h2>{{lingua}}</h2>
+        <p v-for="(i, index) in linguagens">
+            {{index}} : {{i.nome | toUpCase()}}
+        </p>
+        <label for="texto">Escreva algo</label>
+        <input name="texto" id="texto" type="text" v-model="texto">
+        <h3>resultado: {{texto}} </h3>
+
+        <h4>Uma imagem:</h4>
+        <img v-bind:src="logo" v-bind:alt="alt"> <br>
+        <!-- v-bind: pode ser abreviado para : -->
+        <label for="test-color">escreva a cor</label>
+        <input name="test-color" type="text" v-model="color">
+        <p :class="color">{{color}}</p>
+        <button class="btn" :class="limpar">Limpar</button>
+        <button class="btn" :class="enviar" v-on:click="teste()">Enviar</button>
+        <br>
+    </div>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
