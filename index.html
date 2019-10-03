@@ -14,6 +14,9 @@
     <div id="app">
         <h1 v-if="status">{{titulo_true}}</h1>
         <h1 v-else> {{titulo_false}} </h1>
+
+        <img :src="lifecycle" alt="ciclo de vida do vue" id="lifecycle">
+
         <h2>{{lingua}}</h2>
         <p v-for="(i, index) in linguagens">
             {{index}} : {{i.nome | toUpCase()}}
@@ -31,6 +34,9 @@
         <button class="btn" :class="limpar">Limpar</button>
         <button class="btn" :class="enviar" v-on:click="teste()">Enviar</button>
         <br>
+
+        <label for="">Full Name: </label>
+        <p> {{fullName}} </p>
     </div>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/vue.js"></script>
